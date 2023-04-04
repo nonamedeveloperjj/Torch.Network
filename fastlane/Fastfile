@@ -1,0 +1,18 @@
+default_platform(:ios)
+
+platform :ios do
+  lane :unit_tests do
+    desc "Running Unit Tests for scheme Network-Package"
+    scan(
+      project: 'Torch.Network.xcodeproj',
+      scheme: 'Torch.NetworkTests',                                   
+      skip_detect_devices: true,       
+      sdk: 'iphoneos',             
+      buildlog_path: "./fastlane/fastlane-buildlog",
+      configuration: 'Debug',
+      derived_data_path: "./DerivedData",
+      devices: ["iPhone 14"],
+      code_coverage: true
+    )
+  end
+end
