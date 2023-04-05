@@ -12,7 +12,6 @@ final class HTTPClientTests: XCTestCase {
     var urlComponentsFactoryMock: URLComponentsFactoryProtocolMock!
     var urlRequestFactoryMock: URLRequestFactoryProtocolMock!
     var urlSessionMock: URLSessionProtocolMock!
-    var urlSessionDataTaskMock: URLSessionDataTaskProtocolMock!
     var httpClient: HTTPClient!
     
     override func setUpWithError() throws {
@@ -20,7 +19,6 @@ final class HTTPClientTests: XCTestCase {
         urlComponentsFactoryMock = URLComponentsFactoryProtocolMock()
         urlRequestFactoryMock = URLRequestFactoryProtocolMock()
         urlSessionMock = URLSessionProtocolMock()
-        urlSessionDataTaskMock = URLSessionDataTaskProtocolMock()
         httpClient = HTTPClient(
             urlComponentsFactory: urlComponentsFactoryMock,
             urlRequestFactory: urlRequestFactoryMock,
@@ -32,15 +30,13 @@ final class HTTPClientTests: XCTestCase {
         urlComponentsFactoryMock = nil
         urlRequestFactoryMock = nil
         urlSessionMock = nil
-        urlSessionDataTaskMock = nil
         httpClient = nil
         try super.tearDownWithError()
     }
     
-    func testRequestIsCompletedWithErrorIfUrlIsIncorrect() {
+    func testRequestIsCompletedWithErrorIfUrlIsIncorrect() async throws {
         // given
         let requestComponents = TestData.requestComponents
-        var requestError: Error?
 
         var urlComponents = TestData.urlComponents
         urlComponents?.path = "auth/login"
@@ -48,118 +44,93 @@ final class HTTPClientTests: XCTestCase {
         urlComponentsFactoryMock.createFromReturnValue = urlComponents
 
         // when
-        httpClient.sendRequest(requestComponents: requestComponents, completion: { result in
-            if case let .failure(error) = result {
-                requestError = error
-            }
-        })
+        let result = try await httpClient.sendRequest(requestComponents: requestComponents)
 
         // then
-        XCTAssertEqual(requestError as? NetworkError, NetworkError.invalidURL)
+        if case .failure(let requestError) = result {
+            XCTAssertEqual(requestError as? NetworkError, NetworkError.invalidURL)
+        }
     }
     
-    func testCorrectRequestIsCompletedWithErrorIfUrlSessionReturnsError() {
+    func testCorrectRequestIsCompletedWithErrorIfUrlSessionReturnsError() async throws {
         // given
         let requestComponents = TestData.requestComponents
         let stubError: Error = NSError(domain: "", code: 0)
-        var obtainedError: Error?
         
         urlComponentsFactoryMock.createFromReturnValue = TestData.urlComponents
         urlRequestFactoryMock.createFromUrlReturnValue = TestData.urlRequest
         
-        urlSessionMock.createDataTaskWithCompletionHandlerClosure = { [unowned self] _, completionHandler in
-            completionHandler(nil, nil, stubError)
-            return self.urlSessionDataTaskMock
+        urlSessionMock.dataForDelegateThrowableError = stubError
+
+        do {
+            // when
+            _ = try await httpClient.sendRequest(requestComponents: requestComponents)
+        } catch {
+            // then
+            XCTAssertIdentical(error as AnyObject, stubError as AnyObject)
         }
-        
-        // when
-        httpClient.sendRequest(requestComponents: requestComponents) { result in
-            if case let .failure(error) = result {
-                obtainedError = error
-            }
-        }
-        
-        // then
-        XCTAssertIdentical(obtainedError as AnyObject, stubError as AnyObject)
-        
     }
     
-    func testRequestIsCompletedWithIncorrectResponseTypeErrorIfResponseHasIncorrectType() {
+    func testRequestIsCompletedWithIncorrectResponseTypeErrorIfResponseHasIncorrectType() async throws {
         // given
         let requestComponents = TestData.requestComponents
-        var obtainedError: Error?
 
         urlComponentsFactoryMock.createFromReturnValue = TestData.urlComponents
         urlRequestFactoryMock.createFromUrlReturnValue = TestData.urlRequest
         
-        urlSessionMock.createDataTaskWithCompletionHandlerClosure = { [unowned self] _, completionHandler in
-            completionHandler(nil, URLResponse(), nil)
-            return self.urlSessionDataTaskMock
+        urlSessionMock.dataForDelegateClosure = { _, _ in
+            (Data(), URLResponse())
         }
 
         // when
-        httpClient.sendRequest(requestComponents: requestComponents) { result in
-            if case let .failure(error) = result {
-                obtainedError = error
-            }
-        }
+        let result = try await httpClient.sendRequest(requestComponents: requestComponents)
 
         // then
-        XCTAssertEqual(obtainedError as? NetworkError, NetworkError.incorrectResponseType)
+        if case .failure(let obtainedError) = result {
+            XCTAssertEqual(obtainedError as? NetworkError, NetworkError.incorrectResponseType)
+        }
     }
     
-    func testRequestIsCompletedWithUnacceptableStatusCodeIfResponseStatusCodeIsUnacceptable() {
+    func testRequestIsCompletedWithUnacceptableStatusCodeIfResponseStatusCodeIsUnacceptable() async throws {
         // given
         let requestComponents = TestData.requestComponents
-        let urlResponse = HTTPURLResponse(url: TestData.url!, statusCode: 300, httpVersion: nil, headerFields: nil)
-        var obtainedError: Error?
+        let urlResponse = HTTPURLResponse(url: TestData.url!, statusCode: 300, httpVersion: nil, headerFields: nil)!
 
         urlComponentsFactoryMock.createFromReturnValue = TestData.urlComponents
         urlRequestFactoryMock.createFromUrlReturnValue = TestData.urlRequest
         
-        urlSessionMock.createDataTaskWithCompletionHandlerClosure = { [unowned self] _, completionHandler in
-            completionHandler(nil, urlResponse, nil)
-            return self.urlSessionDataTaskMock
-        }
+        urlSessionMock.dataForDelegateReturnValue = (Data(), urlResponse)
 
         // when
-        httpClient.sendRequest(requestComponents: requestComponents) { result in
-            if case let .failure(error) = result {
-                obtainedError = error
-            }
-        }
+        let result = try await httpClient.sendRequest(requestComponents: requestComponents)
 
         // then
-        XCTAssertEqual(obtainedError as? NetworkError, NetworkError.unacceptableStatusCode)
+        if case .failure(let obtainedError) = result {
+            XCTAssertEqual(obtainedError as? NetworkError, NetworkError.unacceptableStatusCode)
+        }
     }
     
-    func testRequestReturnsDataIfEverythingIsCorrect() {
+    func testRequestReturnsDataIfEverythingIsCorrect() async throws {
         // given
         let requestComponents = TestData.requestComponents
-        let urlResponse = HTTPURLResponse(url: TestData.url!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        let urlResponse = HTTPURLResponse(url: TestData.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
         let stubData = Data()
-        var obtainedData: Data?
 
         urlComponentsFactoryMock.createFromReturnValue = TestData.urlComponents
         urlRequestFactoryMock.createFromUrlReturnValue = TestData.urlRequest
         
-        urlSessionMock.createDataTaskWithCompletionHandlerClosure = { [unowned self] _, completionHandler in
-            completionHandler(stubData, urlResponse, nil)
-            return self.urlSessionDataTaskMock
-        }
+        urlSessionMock.dataForDelegateReturnValue = (stubData, urlResponse)
 
         // when
-        httpClient.sendRequest(requestComponents: requestComponents) { result in
-            if case let .success(data) = result {
-                obtainedData = data
-            }
-        }
+        let result = try await httpClient.sendRequest(requestComponents: requestComponents)
 
         // then
-        XCTAssertEqual(obtainedData, stubData)
+        if case .success(let obtainedData) = result {
+            XCTAssertEqual(obtainedData, stubData)
+        }
     }
     
-    func testRequestSendsIfURLIsCorrect() {
+    func testRequestSendsIfURLIsCorrect() async throws {
         // given
         let requestComponents = TestData.requestComponents
         
@@ -169,12 +140,12 @@ final class HTTPClientTests: XCTestCase {
         let request = URLRequest(url: urlComponents!.url!)
         urlRequestFactoryMock.createFromUrlReturnValue = request
         
-        urlSessionMock.createDataTaskWithCompletionHandlerClosure = { [unowned self] _, _ in
-            self.urlSessionDataTaskMock
+        urlSessionMock.dataForDelegateClosure = { _, _ in
+            (Data(), URLResponse())
         }
         
         // when
-        httpClient.sendRequest(requestComponents: requestComponents, completion: { _ in })
+        _ = try await httpClient.sendRequest(requestComponents: requestComponents)
         
         // then
         XCTAssertEqual(urlComponentsFactoryMock.createFromCallsCount, 1)
@@ -184,12 +155,11 @@ final class HTTPClientTests: XCTestCase {
         XCTAssertEqual(urlRequestFactoryMock.createFromUrlReceivedArguments!.requestComponents, requestComponents)
         XCTAssertEqual(urlRequestFactoryMock.createFromUrlReceivedArguments!.url, urlComponents?.url!)
         
-        XCTAssertEqual(urlSessionMock.createDataTaskWithCompletionHandlerCallsCount, 1)
+        XCTAssertEqual(urlSessionMock.dataForDelegateCallsCount, 1)
         XCTAssertEqual(
-            urlSessionMock.createDataTaskWithCompletionHandlerReceivedArguments!.request,
+            urlSessionMock.dataForDelegateReceivedArguments!.request,
             urlRequestFactoryMock.createFromUrlReturnValue
         )
-        XCTAssertEqual(urlSessionDataTaskMock.resumeCallsCount, 1)
     }
 }
 

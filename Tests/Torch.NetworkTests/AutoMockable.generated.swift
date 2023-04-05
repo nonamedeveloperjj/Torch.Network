@@ -4,7 +4,7 @@
 // swiftlint:disable variable_name
 
 import Foundation
-import Torch_Network
+@testable import Torch_Network
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 #elseif os(OSX)
@@ -30,19 +30,28 @@ class HTTPClientProtocolMock: HTTPClientProtocol {
 
     //MARK: - sendRequest
 
-    var sendRequestRequestComponentsCompletionCallsCount = 0
-    var sendRequestRequestComponentsCompletionCalled: Bool {
-        return sendRequestRequestComponentsCompletionCallsCount > 0
+    var sendRequestRequestComponentsThrowableError: Error?
+    var sendRequestRequestComponentsCallsCount = 0
+    var sendRequestRequestComponentsCalled: Bool {
+        return sendRequestRequestComponentsCallsCount > 0
     }
-    var sendRequestRequestComponentsCompletionReceivedArguments: (requestComponents: RequestComponents, completion: (Result<Data?, Error>) -> Void)?
-    var sendRequestRequestComponentsCompletionReceivedInvocations: [(requestComponents: RequestComponents, completion: (Result<Data?, Error>) -> Void)] = []
-    var sendRequestRequestComponentsCompletionClosure: ((RequestComponents, @escaping (Result<Data?, Error>) -> Void) -> Void)?
+    var sendRequestRequestComponentsReceivedRequestComponents: RequestComponents?
+    var sendRequestRequestComponentsReceivedInvocations: [RequestComponents] = []
+    var sendRequestRequestComponentsReturnValue: Result<Data?, Error>!
+    var sendRequestRequestComponentsClosure: ((RequestComponents) async throws -> Result<Data?, Error>)?
 
-    func sendRequest(requestComponents: RequestComponents, completion: @escaping (Result<Data?, Error>) -> Void) {
-        sendRequestRequestComponentsCompletionCallsCount += 1
-        sendRequestRequestComponentsCompletionReceivedArguments = (requestComponents: requestComponents, completion: completion)
-        sendRequestRequestComponentsCompletionReceivedInvocations.append((requestComponents: requestComponents, completion: completion))
-        sendRequestRequestComponentsCompletionClosure?(requestComponents, completion)
+    func sendRequest(requestComponents: RequestComponents) async throws -> Result<Data?, Error> {
+        if let error = sendRequestRequestComponentsThrowableError {
+            throw error
+        }
+        sendRequestRequestComponentsCallsCount += 1
+        sendRequestRequestComponentsReceivedRequestComponents = requestComponents
+        sendRequestRequestComponentsReceivedInvocations.append(requestComponents)
+        if let sendRequestRequestComponentsClosure = sendRequestRequestComponentsClosure {
+            return try await sendRequestRequestComponentsClosure(requestComponents)
+        } else {
+            return sendRequestRequestComponentsReturnValue
+        }
     }
 
 }
@@ -96,43 +105,31 @@ class URLRequestFactoryProtocolMock: URLRequestFactoryProtocol {
     }
 
 }
-class URLSessionDataTaskProtocolMock: URLSessionDataTaskProtocol {
-
-    //MARK: - resume
-
-    var resumeCallsCount = 0
-    var resumeCalled: Bool {
-        return resumeCallsCount > 0
-    }
-    var resumeClosure: (() -> Void)?
-
-    func resume() {
-        resumeCallsCount += 1
-        resumeClosure?()
-    }
-
-}
 class URLSessionProtocolMock: URLSessionProtocol {
 
-    //MARK: - createDataTask
+    //MARK: - data
 
-    var createDataTaskWithCompletionHandlerCallsCount = 0
-    var createDataTaskWithCompletionHandlerCalled: Bool {
-        return createDataTaskWithCompletionHandlerCallsCount > 0
+    var dataForDelegateThrowableError: Error?
+    var dataForDelegateCallsCount = 0
+    var dataForDelegateCalled: Bool {
+        return dataForDelegateCallsCount > 0
     }
-    var createDataTaskWithCompletionHandlerReceivedArguments: (request: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void)?
-    var createDataTaskWithCompletionHandlerReceivedInvocations: [(request: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void)] = []
-    var createDataTaskWithCompletionHandlerReturnValue: URLSessionDataTaskProtocol!
-    var createDataTaskWithCompletionHandlerClosure: ((URLRequest, @Sendable @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol)?
+    var dataForDelegateReceivedArguments: (request: URLRequest, delegate: URLSessionTaskDelegate?)?
+    var dataForDelegateReceivedInvocations: [(request: URLRequest, delegate: URLSessionTaskDelegate?)] = []
+    var dataForDelegateReturnValue: (Data, URLResponse)!
+    var dataForDelegateClosure: ((URLRequest, URLSessionTaskDelegate?) async throws -> (Data, URLResponse))?
 
-    func createDataTask(with request: URLRequest, completionHandler: @Sendable @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
-        createDataTaskWithCompletionHandlerCallsCount += 1
-        createDataTaskWithCompletionHandlerReceivedArguments = (request: request, completionHandler: completionHandler)
-        createDataTaskWithCompletionHandlerReceivedInvocations.append((request: request, completionHandler: completionHandler))
-        if let createDataTaskWithCompletionHandlerClosure = createDataTaskWithCompletionHandlerClosure {
-            return createDataTaskWithCompletionHandlerClosure(request, completionHandler)
+    func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+        if let error = dataForDelegateThrowableError {
+            throw error
+        }
+        dataForDelegateCallsCount += 1
+        dataForDelegateReceivedArguments = (request: request, delegate: delegate)
+        dataForDelegateReceivedInvocations.append((request: request, delegate: delegate))
+        if let dataForDelegateClosure = dataForDelegateClosure {
+            return try await dataForDelegateClosure(request, delegate)
         } else {
-            return createDataTaskWithCompletionHandlerReturnValue
+            return dataForDelegateReturnValue
         }
     }
 

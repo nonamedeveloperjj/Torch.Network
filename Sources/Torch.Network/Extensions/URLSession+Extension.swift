@@ -9,17 +9,10 @@ import Foundation
 
 // sourcery: AutoMockable
 public protocol URLSessionProtocol: AnyObject {
-    func createDataTask(
-        with request: URLRequest,
-        completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void
-    ) -> URLSessionDataTaskProtocol
+    func data(
+        for request: URLRequest,
+        delegate: URLSessionTaskDelegate?
+    ) async throws -> (Data, URLResponse)
 }
 
-extension URLSession: URLSessionProtocol {
-    public func createDataTask(
-        with request: URLRequest,
-        completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void
-    ) -> URLSessionDataTaskProtocol {
-        return dataTask(with: request, completionHandler: completionHandler)
-    }
-}
+extension URLSession: URLSessionProtocol {}
