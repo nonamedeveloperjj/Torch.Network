@@ -158,6 +158,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5A84AD3D29DF08F80036BAC2 /* TorchNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				5A84AD2429DF001D0036BAC2 /* Models */,
+				5A84AD2829DF001D0036BAC2 /* Extensions */,
+				5A84AD2A29DF001D0036BAC2 /* HTTPClient.swift */,
+				5A84AD2B29DF001D0036BAC2 /* HTTPClientAssembly.swift */,
+				5A84AD2C29DF001D0036BAC2 /* URLComponentsFactory.swift */,
+				5A84AD2D29DF001D0036BAC2 /* URLRequestFactory.swift */,
+			);
+			path = TorchNetwork;
+			sourceTree = "<group>";
+		};
 		OBJ_20 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +207,7 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5A84AD3E29DF0FEC0036BAC2 /* TorchNetwork */,
+        5A84AD3E29DF0FEC0036BAC2 /* TorchNetwork */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
