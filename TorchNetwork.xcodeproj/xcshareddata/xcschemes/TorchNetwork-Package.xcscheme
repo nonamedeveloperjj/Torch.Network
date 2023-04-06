@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "torch.network::Torch.Network"
-               BuildableName = "Torch_Network.framework"
-               BlueprintName = "Torch.Network"
-               ReferencedContainer = "container:Torch.Network.xcodeproj">
+               BlueprintIdentifier = "torch.network::TorchNetwork"
+               BuildableName = "TorchNetwork.framework"
+               BlueprintName = "TorchNetwork"
+               ReferencedContainer = "container:TorchNetwork.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "torch.network::Torch.NetworkTests"
-               BuildableName = "Torch.NetworkTests.xctest"
-               BlueprintName = "Torch.NetworkTests"
-               ReferencedContainer = "container:Torch.Network.xcodeproj">
+               BlueprintIdentifier = "torch.network::TorchNetworkTests"
+               BuildableName = "TorchNetworkTests.xctest"
+               BlueprintName = "TorchNetworkTests"
+               ReferencedContainer = "container:TorchNetwork.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

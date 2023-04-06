@@ -4,22 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "Torch.Network",
+    name: "TorchNetwork",
     platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "Torch.Network",
-            targets: ["Torch.Network"]),
+            name: "TorchNetwork",
+            targets: ["TorchNetwork"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "Torch.Network",
+            name: "TorchNetwork",
             dependencies: []),
         .testTarget(
-            name: "Torch.NetworkTests",
-            dependencies: ["Torch.Network"]),
+            name: "TorchNetworkTests",
+            dependencies: ["TorchNetwork"]),
     ]
 )

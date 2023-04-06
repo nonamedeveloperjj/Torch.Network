@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		"torch.network::Torch.NetworkPackageTests::ProductTarget" /* Torch.NetworkPackageTests */ = {
+		"torch.network::TorchNetworkPackageTests::ProductTarget" /* TorchNetworkPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_58 /* Build configuration list for PBXAggregateTarget "Torch.NetworkPackageTests" */;
+			buildConfigurationList = OBJ_58 /* Build configuration list for PBXAggregateTarget "TorchNetworkPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
 				OBJ_61 /* PBXTargetDependency */,
 			);
-			name = Torch.NetworkPackageTests;
-			productName = Torch.NetworkPackageTests;
+			name = TorchNetworkPackageTests;
+			productName = TorchNetworkPackageTests;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_41 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* URLSession+Extension.swift */; };
-		OBJ_43 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* HTTPClient.swift */; };
-		OBJ_44 /* HTTPClientAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* HTTPClientAssembly.swift */; };
-		OBJ_45 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* NetworkError.swift */; };
-		OBJ_46 /* RequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* RequestComponents.swift */; };
-		OBJ_47 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* RequestMethod.swift */; };
-		OBJ_48 /* URLComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* URLComponentsFactory.swift */; };
-		OBJ_49 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* URLRequestFactory.swift */; };
+		5A84AD2E29DF001D0036BAC2 /* RequestComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2529DF001D0036BAC2 /* RequestComponents.swift */; };
+		5A84AD2F29DF001D0036BAC2 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2629DF001D0036BAC2 /* RequestMethod.swift */; };
+		5A84AD3029DF001D0036BAC2 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2729DF001D0036BAC2 /* NetworkError.swift */; };
+		5A84AD3129DF001D0036BAC2 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2929DF001D0036BAC2 /* URLSession+Extension.swift */; };
+		5A84AD3229DF001D0036BAC2 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2A29DF001D0036BAC2 /* HTTPClient.swift */; };
+		5A84AD3329DF001D0036BAC2 /* HTTPClientAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2B29DF001D0036BAC2 /* HTTPClientAssembly.swift */; };
+		5A84AD3429DF001D0036BAC2 /* URLComponentsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2C29DF001D0036BAC2 /* URLComponentsFactory.swift */; };
+		5A84AD3529DF001D0036BAC2 /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD2D29DF001D0036BAC2 /* URLRequestFactory.swift */; };
+		5A84AD3629DF015C0036BAC2 /* URLRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD1729DF00100036BAC2 /* URLRequestFactoryTests.swift */; };
+		5A84AD3729DF01600036BAC2 /* URLComponentsFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD1829DF00100036BAC2 /* URLComponentsFactoryTests.swift */; };
+		5A84AD3829DF01620036BAC2 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD1929DF00100036BAC2 /* AutoMockable.generated.swift */; };
+		5A84AD3929DF01660036BAC2 /* RequestComponents+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD1B29DF00100036BAC2 /* RequestComponents+Equatable.swift */; };
+		5A84AD3A29DF016A0036BAC2 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A84AD1C29DF00100036BAC2 /* HTTPClientTests.swift */; };
+		5A84AD3C29DF02A30036BAC2 /* TorchNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "torch.network::TorchNetwork::Product" /* TorchNetwork.framework */; };
 		OBJ_56 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_67 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* AutoMockable.generated.swift */; };
-		OBJ_68 /* RequestComponents+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* RequestComponents+Equatable.swift */; };
-		OBJ_69 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* HTTPClientTests.swift */; };
-		OBJ_70 /* URLComponentsFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* URLComponentsFactoryTests.swift */; };
-		OBJ_71 /* URLRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* URLRequestFactoryTests.swift */; };
-		OBJ_73 /* Torch_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "torch.network::Torch.Network::Product" /* Torch_Network.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,40 +43,40 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "torch.network::Torch.Network";
-			remoteInfo = Torch.Network;
+			remoteGlobalIDString = "torch.network::TorchNetwork";
+			remoteInfo = TorchNetwork;
 		};
 		5A32161329DDAA7000BC0423 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "torch.network::Torch.NetworkTests";
-			remoteInfo = Torch.NetworkTests;
+			remoteGlobalIDString = "torch.network::TorchNetworkTests";
+			remoteInfo = TorchNetworkTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		OBJ_10 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
-		OBJ_12 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		OBJ_13 /* HTTPClientAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientAssembly.swift; sourceTree = "<group>"; };
-		OBJ_15 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		OBJ_16 /* RequestComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestComponents.swift; sourceTree = "<group>"; };
-		OBJ_17 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
-		OBJ_18 /* URLComponentsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsFactory.swift; sourceTree = "<group>"; };
-		OBJ_19 /* URLRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
-		OBJ_22 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
-		OBJ_24 /* RequestComponents+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestComponents+Equatable.swift"; sourceTree = "<group>"; };
-		OBJ_25 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
-		OBJ_26 /* URLComponentsFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsFactoryTests.swift; sourceTree = "<group>"; };
-		OBJ_27 /* URLRequestFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryTests.swift; sourceTree = "<group>"; };
+		5A84AD1729DF00100036BAC2 /* URLRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryTests.swift; sourceTree = "<group>"; };
+		5A84AD1829DF00100036BAC2 /* URLComponentsFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsFactoryTests.swift; sourceTree = "<group>"; };
+		5A84AD1929DF00100036BAC2 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
+		5A84AD1B29DF00100036BAC2 /* RequestComponents+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestComponents+Equatable.swift"; sourceTree = "<group>"; };
+		5A84AD1C29DF00100036BAC2 /* HTTPClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
+		5A84AD2529DF001D0036BAC2 /* RequestComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestComponents.swift; sourceTree = "<group>"; };
+		5A84AD2629DF001D0036BAC2 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		5A84AD2729DF001D0036BAC2 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5A84AD2929DF001D0036BAC2 /* URLSession+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		5A84AD2A29DF001D0036BAC2 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		5A84AD2B29DF001D0036BAC2 /* HTTPClientAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientAssembly.swift; sourceTree = "<group>"; };
+		5A84AD2C29DF001D0036BAC2 /* URLComponentsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsFactory.swift; sourceTree = "<group>"; };
+		5A84AD2D29DF001D0036BAC2 /* URLRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
 		OBJ_31 /* fastlane */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fastlane; sourceTree = SOURCE_ROOT; };
 		OBJ_32 /* templates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = templates; sourceTree = SOURCE_ROOT; };
 		OBJ_33 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_34 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		OBJ_35 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		"torch.network::Torch.Network::Product" /* Torch_Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Torch_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"torch.network::Torch.NetworkTests::Product" /* Torch_NetworkTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = Torch_NetworkTests.xctest; path = Torch.NetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"torch.network::TorchNetwork::Product" /* TorchNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TorchNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"torch.network::TorchNetworkTests::Product" /* TorchNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = TorchNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,62 +91,77 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_73 /* Torch_Network.framework in Frameworks */,
+				5A84AD3C29DF02A30036BAC2 /* TorchNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_14 /* Models */ = {
+		5A84AD1629DF00100036BAC2 /* TorchNetworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* NetworkError.swift */,
-				OBJ_16 /* RequestComponents.swift */,
-				OBJ_17 /* RequestMethod.swift */,
+				5A84AD1729DF00100036BAC2 /* URLRequestFactoryTests.swift */,
+				5A84AD1829DF00100036BAC2 /* URLComponentsFactoryTests.swift */,
+				5A84AD1929DF00100036BAC2 /* AutoMockable.generated.swift */,
+				5A84AD1A29DF00100036BAC2 /* Extensions */,
+				5A84AD1C29DF00100036BAC2 /* HTTPClientTests.swift */,
+			);
+			name = TorchNetworkTests;
+			path = Tests/TorchNetworkTests;
+			sourceTree = "<group>";
+		};
+		5A84AD1A29DF00100036BAC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A84AD1B29DF00100036BAC2 /* RequestComponents+Equatable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A84AD2429DF001D0036BAC2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A84AD2529DF001D0036BAC2 /* RequestComponents.swift */,
+				5A84AD2629DF001D0036BAC2 /* RequestMethod.swift */,
+				5A84AD2729DF001D0036BAC2 /* NetworkError.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5A84AD2829DF001D0036BAC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A84AD2929DF001D0036BAC2 /* URLSession+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5A84AD3B29DF02A30036BAC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		OBJ_20 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_21 /* Torch.NetworkTests */,
+				5A84AD1629DF00100036BAC2 /* TorchNetworkTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_21 /* Torch.NetworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_22 /* AutoMockable.generated.swift */,
-				OBJ_23 /* Extensions */,
-				OBJ_25 /* HTTPClientTests.swift */,
-				OBJ_26 /* URLComponentsFactoryTests.swift */,
-				OBJ_27 /* URLRequestFactoryTests.swift */,
-			);
-			name = Torch.NetworkTests;
-			path = Tests/Torch.NetworkTests;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_23 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_24 /* RequestComponents+Equatable.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		OBJ_28 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"torch.network::Torch.Network::Product" /* Torch_Network.framework */,
-				"torch.network::Torch.NetworkTests::Product" /* Torch_NetworkTests.xctest */,
+				"torch.network::TorchNetwork::Product" /* TorchNetwork.framework */,
+				"torch.network::TorchNetworkTests::Product" /* TorchNetworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -158,46 +173,29 @@
 				OBJ_33 /* README.md */,
 				OBJ_34 /* Gemfile */,
 				OBJ_35 /* Gemfile.lock */,
+				5A84AD3B29DF02A30036BAC2 /* Frameworks */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* Torch.Network */,
+				5A84AD2429DF001D0036BAC2 /* Models */,
+				5A84AD2829DF001D0036BAC2 /* Extensions */,
+				5A84AD2A29DF001D0036BAC2 /* HTTPClient.swift */,
+				5A84AD2B29DF001D0036BAC2 /* HTTPClientAssembly.swift */,
+				5A84AD2C29DF001D0036BAC2 /* URLComponentsFactory.swift */,
+				5A84AD2D29DF001D0036BAC2 /* URLRequestFactory.swift */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_8 /* Torch.Network */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_9 /* Extensions */,
-				OBJ_12 /* HTTPClient.swift */,
-				OBJ_13 /* HTTPClientAssembly.swift */,
-				OBJ_14 /* Models */,
-				OBJ_18 /* URLComponentsFactory.swift */,
-				OBJ_19 /* URLRequestFactory.swift */,
-			);
-			name = Torch.Network;
-			path = Sources/Torch.Network;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_10 /* URLSession+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"torch.network::SwiftPMPackageDescription" /* Torch.NetworkPackageDescription */ = {
+		"torch.network::SwiftPMPackageDescription" /* TorchNetworkPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_52 /* Build configuration list for PBXNativeTarget "Torch.NetworkPackageDescription" */;
+			buildConfigurationList = OBJ_52 /* Build configuration list for PBXNativeTarget "TorchNetworkPackageDescription" */;
 			buildPhases = (
 				OBJ_55 /* Sources */,
 			);
@@ -205,13 +203,13 @@
 			);
 			dependencies = (
 			);
-			name = Torch.NetworkPackageDescription;
-			productName = Torch.NetworkPackageDescription;
+			name = TorchNetworkPackageDescription;
+			productName = TorchNetworkPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
-		"torch.network::Torch.Network" /* Torch.Network */ = {
+		"torch.network::TorchNetwork" /* TorchNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_37 /* Build configuration list for PBXNativeTarget "Torch.Network" */;
+			buildConfigurationList = OBJ_37 /* Build configuration list for PBXNativeTarget "TorchNetwork" */;
 			buildPhases = (
 				OBJ_40 /* Sources */,
 				OBJ_50 /* Frameworks */,
@@ -220,14 +218,14 @@
 			);
 			dependencies = (
 			);
-			name = Torch.Network;
+			name = TorchNetwork;
 			productName = Torch_Network;
-			productReference = "torch.network::Torch.Network::Product" /* Torch_Network.framework */;
+			productReference = "torch.network::TorchNetwork::Product" /* TorchNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"torch.network::Torch.NetworkTests" /* Torch.NetworkTests */ = {
+		"torch.network::TorchNetworkTests" /* TorchNetworkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_63 /* Build configuration list for PBXNativeTarget "Torch.NetworkTests" */;
+			buildConfigurationList = OBJ_63 /* Build configuration list for PBXNativeTarget "TorchNetworkTests" */;
 			buildPhases = (
 				OBJ_66 /* Sources */,
 				OBJ_72 /* Frameworks */,
@@ -237,9 +235,9 @@
 			dependencies = (
 				OBJ_74 /* PBXTargetDependency */,
 			);
-			name = Torch.NetworkTests;
+			name = TorchNetworkTests;
 			productName = Torch_NetworkTests;
-			productReference = "torch.network::Torch.NetworkTests::Product" /* Torch_NetworkTests.xctest */;
+			productReference = "torch.network::TorchNetworkTests::Product" /* TorchNetworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -251,24 +249,24 @@
 				LastSwiftMigration = 9999;
 				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Torch.Network" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "TorchNetwork" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			packageReferences = (
 			);
 			productRefGroup = OBJ_28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"torch.network::Torch.Network" /* Torch.Network */,
-				"torch.network::SwiftPMPackageDescription" /* Torch.NetworkPackageDescription */,
-				"torch.network::Torch.NetworkPackageTests::ProductTarget" /* Torch.NetworkPackageTests */,
-				"torch.network::Torch.NetworkTests" /* Torch.NetworkTests */,
+				"torch.network::TorchNetwork" /* TorchNetwork */,
+				"torch.network::SwiftPMPackageDescription" /* TorchNetworkPackageDescription */,
+				"torch.network::TorchNetworkPackageTests::ProductTarget" /* TorchNetworkPackageTests */,
+				"torch.network::TorchNetworkTests" /* TorchNetworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,14 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_41 /* URLSession+Extension.swift in Sources */,
-				OBJ_43 /* HTTPClient.swift in Sources */,
-				OBJ_44 /* HTTPClientAssembly.swift in Sources */,
-				OBJ_45 /* NetworkError.swift in Sources */,
-				OBJ_46 /* RequestComponents.swift in Sources */,
-				OBJ_47 /* RequestMethod.swift in Sources */,
-				OBJ_48 /* URLComponentsFactory.swift in Sources */,
-				OBJ_49 /* URLRequestFactory.swift in Sources */,
+				5A84AD3029DF001D0036BAC2 /* NetworkError.swift in Sources */,
+				5A84AD2E29DF001D0036BAC2 /* RequestComponents.swift in Sources */,
+				5A84AD3529DF001D0036BAC2 /* URLRequestFactory.swift in Sources */,
+				5A84AD3129DF001D0036BAC2 /* URLSession+Extension.swift in Sources */,
+				5A84AD3229DF001D0036BAC2 /* HTTPClient.swift in Sources */,
+				5A84AD2F29DF001D0036BAC2 /* RequestMethod.swift in Sources */,
+				5A84AD3429DF001D0036BAC2 /* URLComponentsFactory.swift in Sources */,
+				5A84AD3329DF001D0036BAC2 /* HTTPClientAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,11 +299,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_67 /* AutoMockable.generated.swift in Sources */,
-				OBJ_68 /* RequestComponents+Equatable.swift in Sources */,
-				OBJ_69 /* HTTPClientTests.swift in Sources */,
-				OBJ_70 /* URLComponentsFactoryTests.swift in Sources */,
-				OBJ_71 /* URLRequestFactoryTests.swift in Sources */,
+				5A84AD3A29DF016A0036BAC2 /* HTTPClientTests.swift in Sources */,
+				5A84AD3729DF01600036BAC2 /* URLComponentsFactoryTests.swift in Sources */,
+				5A84AD3629DF015C0036BAC2 /* URLRequestFactoryTests.swift in Sources */,
+				5A84AD3929DF01660036BAC2 /* RequestComponents+Equatable.swift in Sources */,
+				5A84AD3829DF01620036BAC2 /* AutoMockable.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +312,12 @@
 /* Begin PBXTargetDependency section */
 		OBJ_61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "torch.network::Torch.NetworkTests" /* Torch.NetworkTests */;
+			target = "torch.network::TorchNetworkTests" /* TorchNetworkTests */;
 			targetProxy = 5A32161329DDAA7000BC0423 /* PBXContainerItemProxy */;
 		};
 		OBJ_74 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "torch.network::Torch.Network" /* Torch.Network */;
+			target = "torch.network::TorchNetwork" /* TorchNetwork */;
 			targetProxy = 5A32161229DDAA7000BC0423 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -364,7 +362,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Torch.Network.xcodeproj/Torch_Network_Info.plist;
+				INFOPLIST_FILE = TorchNetwork.xcodeproj/TorchNetwork_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -373,11 +371,11 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "Torch-Network";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = Torch.Network;
+				TARGET_NAME = TorchNetwork;
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -394,7 +392,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Torch.Network.xcodeproj/Torch_Network_Info.plist;
+				INFOPLIST_FILE = TorchNetwork.xcodeproj/TorchNetwork_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -403,11 +401,11 @@
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "Torch-Network";
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = Torch.Network;
+				TARGET_NAME = TorchNetwork;
 				TVOS_DEPLOYMENT_TARGET = 11.0;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
@@ -443,6 +441,7 @@
 			buildSettings = {
 				LD = /usr/bin/true;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -package-description-version 5.7.0";
+				PRODUCT_NAME = TorchNetworkPackageDescription;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -452,6 +451,7 @@
 			buildSettings = {
 				LD = /usr/bin/true;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/ManifestAPI -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -package-description-version 5.7.0";
+				PRODUCT_NAME = TorchNetworkPackageDescription;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -459,12 +459,14 @@
 		OBJ_59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = TorchNetworkPackageTests;
 			};
 			name = Debug;
 		};
 		OBJ_60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = TorchNetworkPackageTests;
 			};
 			name = Release;
 		};
@@ -480,16 +482,17 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Torch.Network.xcodeproj/Torch_NetworkTests_Info.plist;
+				INFOPLIST_FILE = TorchNetwork.xcodeproj/TorchNetworkTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = TorchNetworkTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = Torch.NetworkTests;
+				TARGET_NAME = TorchNetworkTests;
 				TVOS_DEPLOYMENT_TARGET = 14.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
@@ -507,16 +510,17 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Torch.Network.xcodeproj/Torch_NetworkTests_Info.plist;
+				INFOPLIST_FILE = TorchNetwork.xcodeproj/TorchNetworkTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = TorchNetworkTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = Torch.NetworkTests;
+				TARGET_NAME = TorchNetworkTests;
 				TVOS_DEPLOYMENT_TARGET = 14.0;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
@@ -525,7 +529,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_2 /* Build configuration list for PBXProject "Torch.Network" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "TorchNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
@@ -534,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_37 /* Build configuration list for PBXNativeTarget "Torch.Network" */ = {
+		OBJ_37 /* Build configuration list for PBXNativeTarget "TorchNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_38 /* Debug */,
@@ -543,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_52 /* Build configuration list for PBXNativeTarget "Torch.NetworkPackageDescription" */ = {
+		OBJ_52 /* Build configuration list for PBXNativeTarget "TorchNetworkPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_53 /* Debug */,
@@ -552,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_58 /* Build configuration list for PBXAggregateTarget "Torch.NetworkPackageTests" */ = {
+		OBJ_58 /* Build configuration list for PBXAggregateTarget "TorchNetworkPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_59 /* Debug */,
@@ -561,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_63 /* Build configuration list for PBXNativeTarget "Torch.NetworkTests" */ = {
+		OBJ_63 /* Build configuration list for PBXNativeTarget "TorchNetworkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_64 /* Debug */,

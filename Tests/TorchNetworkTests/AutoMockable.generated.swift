@@ -4,7 +4,7 @@
 // swiftlint:disable variable_name
 
 import Foundation
-@testable import Torch_Network
+@testable import TorchNetwork
 #if os(iOS) || os(tvOS) || os(watchOS)
 import UIKit
 #elseif os(OSX)
