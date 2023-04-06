@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import Torch_Network
+@testable import TorchNetwork
 
 extension RequestComponents: Equatable {
     public static func == (lhs: RequestComponents, rhs: RequestComponents) -> Bool {

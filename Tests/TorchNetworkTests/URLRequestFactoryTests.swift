@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Torch_Network
+@testable import TorchNetwork
 
 final class URLRequestFactoryTests: XCTestCase {
     var urlRequestFactory: URLRequestFactory!

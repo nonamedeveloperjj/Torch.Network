@@ -4,8 +4,8 @@ platform :ios do
   lane :unit_tests do
     desc "Running Unit Tests for scheme Network-Package"
     scan(
-      project: 'Torch.Network.xcodeproj',
-      scheme: 'Torch.NetworkTests',                                   
+      project: 'TorchNetwork.xcodeproj',
+      scheme: 'TorchNetworkTests',                                   
       skip_detect_devices: true,       
       sdk: 'iphoneos',             
       buildlog_path: "./fastlane/fastlane-buildlog",
